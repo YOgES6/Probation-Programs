@@ -31,8 +31,8 @@ urlpatterns = [
     path('group/',group_list),
     path('group/<int:id>',group_detail),
     
-    path('post/',views.post,name='post'),
-    path('update/<int:pk>',views.update,name='update'),
+    path('book_post/',views.book_post,name='post'),
+    path('book_update/<int:pk>',views.book_update,name='update'),
     
     path('api-auth/',include('rest_framework.urls',namespace='rest_framework')),
 ]
