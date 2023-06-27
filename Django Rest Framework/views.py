@@ -13,15 +13,15 @@ from rest_framework.views import APIView
 
 
 @api_view(['POST'])
-def update(request, pk):
+def book_update(request, pk):
     item = Book.objects.get(pk=pk)
     data = Seriali(instance=item, data=request.data)
- 
     if data.is_valid():
         data.save()
         return Response(data.data)
+
 @api_view(['POST'])
-def post(request):
+def book_post(request):
     query = Seriali(data=request.data)
     if query.is_valid():
         query.save()
